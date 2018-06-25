@@ -1,0 +1,99 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+  --font-family-header: 'Playfair Display', serif;
+  --font-family-copy:   'Montserrat', sans-serif;
+  --base-font-size:     16px;
+  --line-height:        1.15;
+  --color-dark:       #2f2f2f;
+}
+
+html {
+  font-size: var(--base-font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family-copy);
+  color: var(--color-dark);
+}
+
+
+/* TYPOGRAPHY */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: var(--font-family-header);
+}
+
+h1, .h1 { font-size: 3em; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text--center {
+  text-align: center;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  margin: 0 15px;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  } 
+}

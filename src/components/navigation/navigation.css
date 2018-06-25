@@ -1,0 +1,70 @@
+.navigation {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.navigation ul {
+    display: inline-grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(4, auto);
+    display: none;
+}
+
+.navigation ul li,
+.navigation ul li a {
+    display: inline-block;
+}
+
+.navigation ul li a {
+    padding: 15px;
+    box-shadow: inset 0px 0px 0px 0px black;
+    transition: .2s box-shadow;
+}
+
+.navigation ul li a:hover {
+    box-shadow: inset 0px -2px 0px 0px black;
+}
+
+.navigation__icon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.navigation__icon span {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    border-radius: 1px;
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: top .3s, bottom .3s, transform .3s, opacity .3s;
+}
+
+.navigation__icon span:nth-child(1) {
+    top: 5px;
+}
+.navigation__icon span:nth-child(2) {
+    top: calc(50% - 1px);
+}
+.navigation__icon span:nth-child(3) {
+    bottom: 5px;
+}
+
+.navigation__icon--active span:nth-child(1) {
+    top: calc(50% - 1px);
+    transform: rotate(45deg);
+}
+.navigation__icon--active span:nth-child(2) {
+    transform: translateX(75%);
+    opacity: 0;
+}
+.navigation__icon--active span:nth-child(3) {
+    bottom: calc(50% - 1px);
+    transform: rotate(-45deg);
+}
