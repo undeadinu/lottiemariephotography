@@ -1,21 +1,38 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import './navigation.css'
+import styles from './navigation.module.scss'
 
-const Navigation = () => (
-  <div className="navigation">
-    <div className="navigation__icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/services/">Services</Link></li>
-        <li><Link to="/about/">About</Link></li>
-        <li><Link to="/about/">Contact</Link></li>
-    </ul>
-  </div>
-)
+class Navigation extends React.Component {
+
+  constructor() {
+    super();
+    this.state = { navigation: false }
+    this.toggleNavigation = this.toggleNavigation.bind(this);
+  }
+
+  toggleNavigation() {
+    this.setState({ navigation: !this.state.navigation });
+  }
+
+  render() {
+    return (
+      <div className={!this.state.navigation ? styles.navigation : [styles.navigation, styles['navigation--active']].join(' ')}>
+        <div onClick={this.toggleNavigation} className={styles.navigation__icon}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <ul>
+              <li><Link onClick={this.toggleNavigation} to="/">Home</Link></li>
+              <li><Link onClick={this.toggleNavigation} to="/services/">Services</Link></li>
+              <li><Link onClick={this.toggleNavigation} to="/about/">About</Link></li>
+              <li><Link onClick={this.toggleNavigation} to="/about/">Contact</Link></li>
+          </ul>
+        </nav>
+      </div>
+    )
+  }
+}
 
 export default Navigation

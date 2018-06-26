@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Header from '../components/header/header'
 import Navigation from '../components/navigation/navigation'
 
-import './index.css'
+import './sass/master.scss'
 
 const Layout = ({ children, data }) => (
   <div className="container">
@@ -17,7 +17,6 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <Navigation />
     <div>
       {children()}
     </div>
