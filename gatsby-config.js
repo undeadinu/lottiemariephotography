@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Lottie Marie Photography',
+    title: `Lottie Marie Photography`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -15,3 +16,4 @@ module.exports = {
     }
   ],
 }
+
