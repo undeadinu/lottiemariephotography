@@ -12,6 +12,7 @@ html {
   font-family: $font-family-copy;
   color: $color-dark;
   padding-bottom: 15px;
+  background: #FBFDFE;
 }
 
 
@@ -27,6 +28,7 @@ h6, .h6 {
 }
 
 h1, .h1 { font-size: 3em; }
+h2, .h2 { font-size: 2.25em; }
 
 a {
   text-decoration: none;
