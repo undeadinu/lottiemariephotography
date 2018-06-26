@@ -1,0 +1,111 @@
+@import '~include-media/dist/include-media';
+@import '../../layouts/sass/partials/variables';
+
+.navigation {
+    display: grid;
+    justify-content: center;
+    @include media(">=tablet") {
+        margin-top: 15px;
+    }
+}
+
+.navigation--active {
+    position: fixed;
+    display: grid;
+    justify-content: center;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background: white;
+    @include media(">=tablet") {
+        padding: 0;
+        position: relative;
+    }
+}
+
+.navigation ul {
+    display: inline-grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(4, auto);
+    display: none;
+}
+
+.navigation--active ul {
+    display: grid;
+    background: white;
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-template-rows: repeat(4, 46px);
+}
+
+.navigation ul {
+    @include media(">=tablet") {
+        display: inline-grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto; 
+    }
+}
+
+.navigation ul li,
+.navigation ul li a {
+    display: inline-block;
+}
+
+.navigation ul li a {
+    padding: 15px;
+    box-shadow: inset 0px 0px 0px 0px black;
+    transition: .2s box-shadow;
+}
+
+.navigation ul li a:hover {
+    box-shadow: inset 0px -2px 0px 0px black;
+}
+
+
+//Navigation icon
+
+.navigation__icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    cursor: pointer;
+    @include media(">=tablet") {
+        display: none;   
+    }
+}
+
+.navigation__icon span {
+    height: 2px;
+    width: 100%;
+    background-color: $color-dark;
+    position: absolute;
+    border-radius: 1px;
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: top .3s, bottom .3s, transform .3s, opacity .3s;
+    &:nth-child(1) { top: 5px; }
+    &:nth-child(2) { top: calc(50% - 1px); }
+    &:nth-child(3) { bottom: 5px; }
+}
+
+.navigation--active .navigation__icon span {
+    &:nth-child(1) {
+        top: calc(50% - 1px);
+        transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+        transform: translateX(75%);
+        opacity: 0;
+    }
+    &:nth-child(3) {
+        bottom: calc(50% - 1px);
+        transform: rotate(-45deg);
+    }
+}

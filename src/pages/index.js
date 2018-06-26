@@ -17,6 +17,17 @@ const IndexPage = () => (
         <img src={image3} className="featuredImages__image" />
       </div>
     </div>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
   </div>
 )
 
