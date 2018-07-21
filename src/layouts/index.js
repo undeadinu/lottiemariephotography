@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header/header'
-import Navigation from '../components/navigation/navigation'
 
 import './sass/master.scss'
 
 const Layout = ({ children, data }) => (
-  <div className="container">
+  <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -17,9 +16,7 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div>
-      {children()}
-    </div>
+    {children()}
   </div>
 )
 

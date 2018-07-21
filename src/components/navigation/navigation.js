@@ -25,6 +25,7 @@ class Navigation extends React.Component {
         <nav>
           <ul>
               <li><Link onClick={this.toggleNavigation} to="/">Home</Link></li>
+              <li><Link onClick={this.toggleNavigation} to="/contact">Contact</Link></li>
           </ul>
         </nav>
       </div>

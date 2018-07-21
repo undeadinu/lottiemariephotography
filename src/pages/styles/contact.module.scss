@@ -1,0 +1,137 @@
+@import '~include-media/dist/include-media';
+@import '../../layouts/sass/partials/variables';
+
+.formHolder {
+    display: grid;
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin-top: 35px;
+    box-shadow: 0 0 25px rgba(0,0,0,.1);
+    width: 100%;
+    grid-gap: 30px;
+    @include media(">=tablet") {
+        max-width: 550px;
+    }
+    @include media(">=large") {
+        padding: 30px;
+        max-width: 800px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.radioGroup {
+    @include media(">=large") {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.wideGroup {
+    @include media(">=large") {
+        grid-column: span 2;
+    }
+}
+
+.formGroup {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.formGroup p {
+    margin-bottom: 10px;
+}
+
+.formControl {
+    padding: 0 10px;
+    border: 1px solid #cbcbcb;
+    line-height: 43px;
+    border-radius: 3px;
+    font-size: 1em;
+    outline: none;
+    &:focus {
+        border-color: #2196F3;
+    }
+}
+
+.formControlTextArea {
+    padding: 12px 10px;
+    font-size: 1em;
+    border: 1px solid #cbcbcb;
+    line-height: 24px;
+    border-radius: 3px;
+    outline: none;
+    &:focus {
+        border-color: #2196F3;
+    }
+}
+
+.customCheckBox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .customCheckBox input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  .customCheckBox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .customCheckBox input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .customCheckBox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .customCheckBox .checkmark:after {
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  .submitButton {
+    font-size: 18px;
+    padding: 15px 0;
+    line-height: 18px;
+    background-color: #2196f3;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    @include media(">=large") {
+        max-width: 250px;
+    }
+  }

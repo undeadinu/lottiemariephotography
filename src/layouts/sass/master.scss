@@ -27,8 +27,8 @@ h6, .h6 {
   font-family: $font-family-header;
 }
 
-h1, .h1 { font-size: 3em; }
-h2, .h2 { font-size: 2.25em; }
+h1, .h1 { font-size: 2.5em; }
+h2, .h2 { font-size: 2.1em; }
 
 a {
   text-decoration: none;
@@ -37,6 +37,13 @@ a {
 
 .text--center {
   text-align: center;
+}
+
+.siteTitle {
+  margin: 25px 0;
+  @include media (">=tablet") {
+    margin: 25px 0 35px 0;
+  }
 }
 
 /* GRID */
